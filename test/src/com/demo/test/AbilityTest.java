@@ -85,8 +85,8 @@ public class AbilityTest {
         }
     }
     public void cat_jude(){
-        Cat cat1 = new Cat();
-        cat1.name = "小花";
+        Cat cat1 = new Cat();   //示例对象
+        cat1.name = "小花";   //成员变量
         cat1.age = 22;
         cat1.color = "花色";
         Cat cat2 = new Cat();
@@ -94,9 +94,12 @@ public class AbilityTest {
         cat2.age = 12;
         cat2.color = "黑色";
 
+        cat2.eat(); //成员方法
+        int num = cat1.add(1,4);    //成员方法
+        System.out.println("result:"+num);
         System.out.println("Please a name of cat:");
-        Scanner br = new Scanner(System.in);
-        String cat_name = br.next();
+        Scanner br = new Scanner(System.in);    //创建键盘扫描对象
+        String cat_name = br.next();            //获取输入字符
         System.out.println(cat1.name);
         if(cat_name.equals(cat1.name)){ //Java中通常使用“str1.equals(str2)”方法比较字符长是否相等，使用“！str1.equals(str2)”表示不等
             System.out.println("张老太有一只叫"+cat1.name+"的"+cat1.color+"小猫，这只小猫的年龄已经有"+cat1.age+"了。");

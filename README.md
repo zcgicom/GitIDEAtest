@@ -12,4 +12,5 @@ Make -> Ant -> Maven -> Gradle
 
 SystemInputReader:键盘输入获取字符的三种方式;  
 EInputReader:定义字符输入类;  
+Cat:定义猫属性类;  
 AbilityTest:功能测试主方法.
