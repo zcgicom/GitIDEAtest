@@ -13,7 +13,7 @@ package DemoMulti;
  * 含义：右侧创建一个子类对象，把它当做父类来看待使用。  “创建了一只猫当做动物看待！” --> 即猫类型向上转型为动物类型
  * 注意事项：向上转型一定是安全的！     类似于double num = 100;//正确，int --> double,自动类型转换【转型后的范围更广，小范围转向大范围】
  * 缺点：对象一旦向上转型为父类，则无法再调用子类原本特有的方法和内容。【解决方案：对象的向下转型(还原)】
- * 2.对象的向下转型，
+ * 2.对象的向下转型：
  * 格式：子类名称 对象名 = (子类名称) 父类对象;
  * 含义：将父类对象，[还原]为本来的子类对象。   Animal animal = new Cat();//本来是猫，向上转型为动物
  *                                          Cat cat = (Cat)animal;//本来是猫，已被转型为动物，向下转型[还原]为本来的猫类
@@ -47,6 +47,6 @@ public class MultiDemo {
         Cat cat = (Cat)animal;
         cat.catchMouse();
         //错误的向下转型,本来是一直猫，非要转换为狗
-        Dog dog = (Dog)animal;//错误写法!,编译不会报错，但运行会出现异常：java.lang.ClassCastException,类转换异常
+//        Dog dog = (Dog)animal;//错误写法!,编译不会报错，但运行会出现异常：java.lang.ClassCastException,类转换异常
     }
 }
