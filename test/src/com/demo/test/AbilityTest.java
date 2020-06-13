@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 import com.demo.test.EInputReader;
 import com.demo.test.Cat;
+import com.demo.test.Person;
 
 
 /**
@@ -85,19 +86,36 @@ public class AbilityTest {
         }
     }
     public void cat_jude(){
-        Cat cat1 = new Cat();   //示例对象
-        cat1.name = "小花";   //成员变量
-        cat1.age = 22;
-        cat1.color = "花色";
-        Cat cat2 = new Cat();
-        cat2.name = "小黑";
-        cat2.age = 12;
-        cat2.color = "黑色";
+//        Cat cat1 = new Cat();   //实例对象
+//        cat1.name = "小花";   //成员变量
+//        cat1.age = 22;
+//        cat1.color = "花色";
+//        Cat cat2 = new Cat();
+//        cat2.name = "小黑";
+//        cat2.age = 12;
+//        cat2.color = "黑色";
+//        Cat cat3;
+//        cat3 = cat2;
+//        cat3.age = 20;
+        Cat cat1 = new Cat("小花",22,"花色");//利用构造方法实例化对象
+        Cat cat2 = new Cat("小黑",12,"黑色");
+        Cat cat3;
+        cat3 = cat2;//对象间的赋值，表示对象指向同一个实例
+        System.out.println("cat3的年龄："+cat3.age+"\n"+"cat2的年龄："+cat2.age);
+
+        Person p1 = new Person("tom",23,1000,cat1);
+        System.out.println("实例化对象时会触发一次构造函数：结果运行i="+p1.i);
+        p1.showinof();
+        p1.cat.showinof();
+        CatSon catSon = new CatSon("小明",10,"白色");//子类继承父类
+        catSon.showinof();//子类调用父类方法
 
         cat2.eat(); //成员方法
         int num = cat1.add(1,4);    //成员方法
-        System.out.println("result:"+num);
-        System.out.println("Please a name of cat:");
+        float num1 = cat1.add(2,3,5);
+        System.out.println("成员方法调用计算结果:"+num+" "+num1);
+
+        System.out.println("Please input a name of cat:");
         Scanner br = new Scanner(System.in);    //创建键盘扫描对象
         String cat_name = br.next();            //获取输入字符
         System.out.println(cat1.name);
